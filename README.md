@@ -16,4 +16,4 @@ npm install -g firebase-tools
 
 ## 1차 완성 : 컴퍼넌트 사용, props 사용, swiper 사용
 
-firebase deploy : https://vueclass36.web.app
+firebase deploy : https://vueclass55.web.app
