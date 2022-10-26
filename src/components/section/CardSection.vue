@@ -1,8 +1,8 @@
 <template>
-    <section id="cardType" class="card__wrap nexon section parallax">
+    <section id="cardType" class="card__wrap" :class="attr">
         <h2>WEDDING MAKEUP</h2>
         <p>WEDDING MAKEUP의 종류, 특징, 가격 등 다양한 정보를 알아보세요.</p>
-        <div class="card__inner container">
+        <div class="card__inner" :class="layout">
             <article class="card">
                 <figure class="card__header">
                     <img src="../../assets/img/w_card_bg01_01.jpg" alt="메이크업 종류" />
@@ -74,6 +74,15 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    props: {
+        attr: String,
+        layout: String,
+    },
+};
+</script>
 
 <style>
 /* cardType */

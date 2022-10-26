@@ -1,7 +1,7 @@
 <template>
-    <footer id="footerType" class="footer__wrap nexon section gray">
+    <footer id="footerType" class="footer__wrap" :class="attr">
         <h2 class="blind">푸터 영역</h2>
-        <div class="footer__inner container">
+        <div class="footer__inner" :class="layout">
             <div class="footer__menu">
                 <div>
                     <h3>사이트</h3>
@@ -99,6 +99,15 @@
         </div>
     </footer>
 </template>
+
+<script>
+export default {
+    props: {
+        attr: String,
+        layout: String,
+    },
+};
+</script>
 
 <style>
 /* footerType */

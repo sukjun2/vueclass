@@ -1,8 +1,8 @@
 <template>
-    <section id="imageType" class="image__wrap section nexon">
+    <section id="imageType" class="image__wrap" :class="attr">
         <h2>WEDDING HALL</h2>
         <p>예식장은 신랑, 신부의 약속을 맺는 아름다운 장소입니다.</p>
-        <div class="image__inner container">
+        <div class="image__inner" :class="layout">
             <article class="image img1">
                 <h3 class="image__tit">야외 예식장</h3>
                 <p class="image__desc">일반적으로 하는 실내 예식이 아닌, 야외 예식장도 주변 경관에 따라 더욱 아름답고 분위기 있는 선택이 될 수 있습니다.</p>
@@ -16,6 +16,15 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    props: {
+        attr: String,
+        layout: String,
+    },
+};
+</script>
 
 <style>
 /* imageType */

@@ -1,5 +1,5 @@
 <template>
-    <section id="bannerType" class="banner__wrap nexon parallax">
+    <section id="bannerType" class="banner__wrap" :class="attr">
         <h2 class="blind">배너 영역</h2>
         <div class="banner__inner">
             <h3 class="title">WEDDING</h3>
@@ -12,6 +12,14 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    props: {
+        attr: String,
+    },
+};
+</script>
 
 <style>
 /* bannerType */

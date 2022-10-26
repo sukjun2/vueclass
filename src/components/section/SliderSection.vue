@@ -1,60 +1,104 @@
 <template>
-    <div class="slider__inner">
-        <Swiper class="mySwiper">
-            <SwiperSlide>
-                <div class="swiper-slide img1">
-                    <div class="desc">
-                        <span>BLESSING</span>
-                        <h3>WEDDING SEASON</h3>
-                        <p>
-                            웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도!
-                            <br />
-                            결혼식이 너무 많아서 지갑이 점점 가벼워지네요!
-                        </p>
-                        <div class="btn">
-                            <a href="/">자세히 보기</a>
-                            <a href="/" class="black"> 사이트 보기 </a>
+    <section id="sliderType" class="slider__wrap" :class="fonts">
+        <div class="slider__inner">
+            <swiper
+                :spaceBetween="30"
+                :centeredSlides="true"
+                :autoplay="{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }"
+                :pagination="{
+                    clickable: true,
+                }"
+                :navigation="true"
+                :modules="modules"
+                class="mySwiper"
+            >
+                <swiper-slide>
+                    <div class="swiper-slide img1">
+                        <div class="desc">
+                            <span>BLESSING</span>
+                            <h3>WEDDING SEASON</h3>
+                            <p>
+                                웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도!
+                                <br />
+                                결혼식이 너무 많아서 지갑이 점점 가벼워지네요!
+                            </p>
+                            <div class="btn">
+                                <a href="/">자세히 보기</a>
+                                <a href="/" class="black"> 사이트 보기 </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="swiper-slide img2">
-                    <div class="desc">
-                        <span>BLESSING</span>
-                        <h3>WEDDING SEASON</h3>
-                        <p>
-                            웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도!
-                            <br />
-                            결혼식이 너무 많아서 지갑이 점점 가벼워지네요!
-                        </p>
-                        <div class="btn">
-                            <a href="/">자세히 보기</a>
-                            <a href="/" class="black"> 사이트 보기 </a>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="swiper-slide img2">
+                        <div class="desc">
+                            <span>BLESSING</span>
+                            <h3>WEDDING SEASON</h3>
+                            <p>
+                                웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도!
+                                <br />
+                                결혼식이 너무 많아서 지갑이 점점 가벼워지네요!
+                            </p>
+                            <div class="btn">
+                                <a href="/">자세히 보기</a>
+                                <a href="/" class="black"> 사이트 보기 </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="swiper-slide img3">
-                    <div class="desc">
-                        <span>BLESSING</span>
-                        <h3>WEDDING SEASON</h3>
-                        <p>
-                            웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도!
-                            <br />
-                            결혼식이 너무 많아서 지갑이 점점 가벼워지네요!
-                        </p>
-                        <div class="btn">
-                            <a href="/">자세히 보기</a>
-                            <a href="/" class="black"> 사이트 보기 </a>
+                </swiper-slide>
+                <swiper-slide
+                    ><div class="swiper-slide img3">
+                        <div class="desc">
+                            <span>BLESSING</span>
+                            <h3>WEDDING SEASON</h3>
+                            <p>
+                                웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도!
+                                <br />
+                                결혼식이 너무 많아서 지갑이 점점 가벼워지네요!
+                            </p>
+                            <div class="btn">
+                                <a href="/">자세히 보기</a>
+                                <a href="/" class="black"> 사이트 보기 </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SwiperSlide>
-        </Swiper>
-    </div>
+                </swiper-slide>
+            </swiper>
+        </div>
+    </section>
 </template>
+
+<script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+        return {
+            modules: [Autoplay, Pagination, Navigation],
+        };
+    },
+    props: {
+        fonts: String,
+    },
+};
+</script>
 
 <style>
 /* swiper */

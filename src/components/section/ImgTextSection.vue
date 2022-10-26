@@ -1,7 +1,7 @@
 <template>
-    <section id="imgTextType" class="imgText__wrap nexon section gray parallax">
+    <section id="imgTextType" class="imgText__wrap" :class="attr">
         <h2 class="blind">유용한 사이트 살펴보기</h2>
-        <div class="imgText__inner container">
+        <div class="imgText__inner" :class="layout">
             <div class="imgText__txt">
                 <span>WEDDING DRESS SITE</span>
                 <h3>WEDDING DRESS</h3>
@@ -36,6 +36,15 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    props: {
+        attr: String,
+        layout: String,
+    },
+};
+</script>
 
 <style>
 /* imgTextType */

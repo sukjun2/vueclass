@@ -1,8 +1,8 @@
 <template>
-    <section id="textType" class="text__wrap nexon section parallax">
+    <section id="textType" class="text__wrap" :class="attr">
         <span>CHECKLIST</span>
         <h2 class="mb70">결혼 전 체크리스트</h2>
-        <div class="text__inner container">
+        <div class="text__inner" :class="layout">
             <article class="text t1">
                 <h3 class="text__title">생활 패턴</h3>
                 <p class="text__desc">평소에 집에 몇 시쯤 들어와? 침대에 안 씻고 누워도 돼? 정리정돈에 철저한 편이야? 집에 친구들 부르는 거 좋아해?</p>
@@ -36,6 +36,15 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    props: {
+        attr: String,
+        layout: String,
+    },
+};
+</script>
 
 <style>
 /* textType */
