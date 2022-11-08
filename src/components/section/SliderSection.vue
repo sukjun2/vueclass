@@ -16,14 +16,12 @@
                 class="mySwiper"
             >
                 <swiper-slide>
-                    <div class="swiper-slide img1">
+                    <div class="swiper-slide" :class="titles[0].img">
                         <div class="desc">
-                            <span>BLESSING</span>
-                            <h3>WEDDING SEASON</h3>
+                            <span>{{titles[0].subtitle}}</span>
+                            <h3>{{titles[0].title}}</h3>
                             <p>
-                                웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도!
-                                <br />
-                                결혼식이 너무 많아서 지갑이 점점 가벼워지네요!
+                                {{titles[0].text}}
                             </p>
                             <div class="btn">
                                 <a href="/">자세히 보기</a>
@@ -33,6 +31,36 @@
                     </div>
                 </swiper-slide>
                 <swiper-slide>
+                    <div class="swiper-slide" :class="titles[1].img">
+                        <div class="desc">
+                            <span>{{titles[1].subtitle}}</span>
+                            <h3>{{titles[1].title}}</h3>
+                            <p>
+                                {{titles[1].text}}
+                            </p>
+                            <div class="btn">
+                                <a href="/">자세히 보기</a>
+                                <a href="/" class="black"> 사이트 보기 </a>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="swiper-slide" :class="titles[2].img">
+                        <div class="desc">
+                            <span>{{titles[2].subtitle}}</span>
+                            <h3>{{titles[2].title}}</h3>
+                            <p>
+                                {{titles[2].text}}
+                            </p>
+                            <div class="btn">
+                                <a href="/">자세히 보기</a>
+                                <a href="/" class="black"> 사이트 보기 </a>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <!-- <swiper-slide>
                     <div class="swiper-slide img2">
                         <div class="desc">
                             <span>BLESSING</span>
@@ -65,7 +93,7 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
+                </swiper-slide> -->
             </swiper>
         </div>
     </section>
@@ -97,6 +125,15 @@ export default {
     props: {
         fonts: String,
     },
+    data: function () {
+        return {
+            titles: [
+                {img: "img1", subtitle: "BLESSING", title: "WEDDING SEASON", text: "웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도! 결혼식이 너무 많아서 지갑이 점점 가벼워지네요!"},
+                {img: "img2", subtitle: "BLESSING", title: "WEDDING SEASON", text: "웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도! 결혼식이 너무 많아서 지갑이 점점 가벼워지네요!"},
+                {img: "img3", subtitle: "BLESSING", title: "WEDDING SEASON", text: "웨딩 시즌이 다가왔어요! 9월부터 시작해서 10월, 11월에도! 결혼식이 너무 많아서 지갑이 점점 가벼워지네요!"},
+            ]
+        }
+    }
 };
 </script>
 

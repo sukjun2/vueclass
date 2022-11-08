@@ -1,16 +1,16 @@
 <template>
     <section id="cardType" class="card__wrap" :class="attr">
-        <h2>WEDDING MAKEUP</h2>
-        <p>WEDDING MAKEUP의 종류, 특징, 가격 등 다양한 정보를 알아보세요.</p>
+        <h2>{{title.subtitle}}</h2>
+        <p>{{title.title}}</p>
         <div class="card__inner" :class="layout">
-            <article class="card">
+            <article class="card" v-for="title in titles" v-bind:key="(title.src, title.alt, title.title, title.desc)">
                 <figure class="card__header">
-                    <img src="../../assets/img/w_card_bg01_01.jpg" alt="메이크업 종류" />
+                    <img :src="title.src" :alt="title.alt" />
                 </figure>
                 <div class="card__body">
-                    <h3 class="tit">웨딩 메이크업 종류</h3>
+                    <h3 class="tit">{{title.title}}</h3>
                     <p class="desc">
-                        일반 웨딩홀은 홍조를 살짝 띈 밝고 화사한 메이크업, 호텔은 내추럴한 피부표현으로 은은하고 고급스러운 메이크업, 채플 웨딩홀은 피부톤은 한 단계 밝게, 음영을 넣어...
+                        {{title.desc}}
                     </p>
                     <a class="btn" href="/">
                         더 자세히 보기
@@ -27,7 +27,7 @@
                     </a>
                 </div>
             </article>
-            <article class="card">
+            <!-- <article class="card">
                 <figure>
                     <img src="../../assets/img/w_card_bg01_02.jpg" alt="메이크업 특징" />
                 </figure>
@@ -70,7 +70,7 @@
                         </span>
                     </a>
                 </div>
-            </article>
+            </article> -->
         </div>
     </section>
 </template>
@@ -81,6 +81,16 @@ export default {
         attr: String,
         layout: String,
     },
+    data: function() {
+        return {
+            title: {subtitle: "WEDDING MAKEUP", title: "WEDDING MAKEUP의 종류, 특징, 가격 등 다양한 정보를 알아보세요."},
+            titles: [
+                {src: "../../assets/img/w_card_bg01_01.jpg", alt: "메이크업 종류", title: "웨딩 메이크업 종류", desc: "일반 웨딩홀은 홍조를 살짝 띈 밝고 화사한 메이크업, 호텔은 내추럴한 피부표현으로 은은하고 고급스러운 메이크업, 채플 웨딩홀은 피부톤은 한 단계 밝게, 음영을 넣어..."},
+                {src: "../../assets/img/w_card_bg01_02.jpg", alt: "메이크업 특징", title: "웨딩 메이크업 특징", desc: "웨딩 메이크업은 정형화된 스타일에서 점차 내추럴한 메이크업이 유행되어 차분하고 은은한 아이메이크업과 입술 색을 살린 누드 톤의 글로시한 립메이크업이 유행..."},
+                {src: "../../assets/img/w_card_bg01_03.jpg", alt: "메이크업 가격", title: "웨딩 메이크업 가격", desc: "웨딩 헤어/메이크업은 건당 비용이 달라져요. 숨고 내에서 거래되는 웨딩 헤어/메이크업의 평균 비용은 건당 203,000원이에요. 최저 비용은 120,000원이고 최고..."},
+            ]
+        }
+    }
 };
 </script>
 

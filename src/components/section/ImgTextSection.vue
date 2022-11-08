@@ -3,14 +3,14 @@
         <h2 class="blind">유용한 사이트 살펴보기</h2>
         <div class="imgText__inner" :class="layout">
             <div class="imgText__txt">
-                <span>WEDDING DRESS SITE</span>
-                <h3>WEDDING DRESS</h3>
-                <p>신랑, 신부님의 턱시도 / 드레스 or 한복을 볼 수 있는 사이트입니다.</p>
+                <span>{{title.subtitle}}</span>
+                <h3>{{title.title}}</h3>
+                <p>{{title.desc}}</p>
                 <ul>
-                    <li>
-                        <a href="/">드레스 사이트</a>
+                    <li v-for="title in titles" v-bind:key="(title.link, title.text)">
+                        <a :href=title.link>{{title.text}}</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="/">턱시도 사이트</a>
                     </li>
                     <li>
@@ -24,15 +24,15 @@
                     </li>
                     <li>
                         <a href="/">한복 사이트2</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
-            <div class="imgText__img img1">
-                <a href="/">드레스 사이트</a>
+            <div class="imgText__img" :class="title.img" v-for="title in subtitle" v-bind:key="(title.img, title.site, title.link)">
+                <a :href="title.link">{{title.site}}</a>
             </div>
-            <div class="imgText__img img2">
-                <a href="/" class="blue"> 턱시도 사이트 </a>
-            </div>
+            <!-- <div class="imgText__img img2">
+                <a href="/" class="blue">{{subtitle.site2}}</a>
+            </div> -->
         </div>
     </section>
 </template>
@@ -43,6 +43,23 @@ export default {
         attr: String,
         layout: String,
     },
+    data: function () {
+        return {
+            title: {subtitle: "WEDDING DRESS SITE", title: "WEDDING DRESS", desc: "신랑, 신부님의 턱시도 / 드레스 or 한복을 볼 수 있는 사이트입니다."},
+            titles: [
+                {link: "/", text: "드레스 사이트"},
+                {link: "/", text: "턱시도 사이트"},
+                {link: "/", text: "한복 사이트"},
+                {link: "/", text: "드레스 사이트"},
+                {link: "/", text: "턱시도 사이트"},
+                {link: "/", text: "한복 사이트"},
+            ],
+            subtitle: [
+                {img: "img1", site: "드레스 사이트", link: "/"},
+                {img: "img2", site: "턱시도 사이트", link: "/"}
+            ]
+        }
+    }
 };
 </script>
 
