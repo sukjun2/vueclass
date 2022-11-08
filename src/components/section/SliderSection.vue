@@ -141,14 +141,17 @@ export default {
 /* swiper */
 .swiper-slide.img1 {
     background: url(../../assets/img/w_slider_bg01.jpg) no-repeat center / cover;
+    margin-top: 50px;
 }
 
 .swiper-slide.img2 {
     background: url(../../assets/img/w_slider_bg02.jpg) no-repeat center / cover;
+    margin-top: 50px;
 }
 
 .swiper-slide.img3 {
     background: url(../../assets/img/w_slider_bg03.jpg) no-repeat center / cover;
+    margin-top: 50px;
 }
 
 .swiper-slide .desc {
